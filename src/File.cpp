@@ -14,9 +14,9 @@
 
 #include <SD.h>
 
-/* for debugging file open/close leaks
+// for debugging file open/close leaks
    uint8_t nfilecount=0;
-*/
+//
 
 File::File(SdFile f, const char *n) {
   // oh man you are kidding me, new() doesn't exist? Ok we do it by hand!
@@ -27,13 +27,13 @@ File::File(SdFile f, const char *n) {
     strncpy(_name, n, 12);
     _name[12] = 0;
 
-    /* for debugging file open/close leaks
+//    /* for debugging file open/close leaks
        nfilecount++;
        Serial.print("Created \"");
        Serial.print(n);
        Serial.print("\": ");
        Serial.println(nfilecount, DEC);
-    */
+//    */
   }
 }
 
@@ -151,11 +151,11 @@ void File::close() {
     free(_file);
     _file = 0;
 
-    /* for debugging file open/close leaks
+//    /* for debugging file open/close leaks
       nfilecount--;
       Serial.print("Deleted ");
       Serial.println(nfilecount, DEC);
-    */
+//    */
   }
 }
 
