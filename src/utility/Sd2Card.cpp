@@ -24,13 +24,17 @@
 #ifndef SOFTWARE_SPI
 #ifdef USE_SPI_LIB
 
-  #ifndef SDCARD_SPI
-    #define SDCARD_SPI SPI
-  #endif
+  // #ifndef SDCARD_SPI
+  //   #define SDCARD_SPI SPI
+  // #endif
 
   #include <SPI.h>
+
+  SPIClass SDCARD_SPI(2);
+
   static SPISettings settings;
 #endif
+
 // functions for hardware SPI
 /** Send a byte to the card */
 static void spiSend(uint8_t b) {
