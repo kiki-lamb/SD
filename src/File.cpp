@@ -155,7 +155,7 @@ void File::close() {
     free(_file);
     _file = 0;
 
-#deine DEBUG_SDFILE
+#define DEBUG_SDFILE
 //    /* for debugging file open/close leaks
       nfilecount--;
       Serial.print("Deleted ");
