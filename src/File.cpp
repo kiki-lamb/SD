@@ -15,7 +15,7 @@
 #include <SD.h>
 
 // for debugging file open/close leaks
-   uint8_t nfilecount=0;
+   uint16_t nfilecount=0;
 //
 
 File::File(SdFile f, const char *n) {
